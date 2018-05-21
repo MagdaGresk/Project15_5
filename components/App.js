@@ -31,6 +31,7 @@ App = React.createClass({
     },
 
     getGif: function(searchingText) {
+        
         return new Promise(
             function(resolve, reject) {
 
@@ -38,9 +39,10 @@ App = React.createClass({
                 var xhr = new XMLHttpRequest()
 
                 xhr.open('GET', url)
-                xhr.onload=function() {
+                xhr.onload = function() {
+                    
                   if (xhr.status === 200){
-                    var data =JSON.parse(xhr.responseText).data 
+                    var data = JSON.parse(xhr.responseText).data 
                     var gif = {
                         url: data.fixed_width_downsampled_url,
                         sourceUrl: data.url
