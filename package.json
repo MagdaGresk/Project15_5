@@ -1,14 +1,14 @@
 {
-  "name": "PROJECT15_3",
+  "name": "PROJECT15_5",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "scripts.js",
   "scripts": {
     "test": "npm-run-all test:*",
     "test:html": "nu-html-checker *.html",
     "init-project": "npm install && npm-run-all init:*",
     "init:dirs": "mkdir -p sass css vendor images js",
-    "init:files": "touch README.md index.html sass/style.scss js/script.js",
+    "init:files": "touch README.md index.html style.scss scripts.js",
     "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
     "build": "npm-run-all build:* test",
     "build:clean": "rimraf css",
@@ -18,7 +18,7 @@
     "watch": "npm-run-all build -p watch:*",
     "watch:sassprefixer": "onchange sass -- node-sass --output-style expanded --source-map true -o css sass -- autoprefixer-cli -o css/style.css",
     "watch:browser-sync": "browser-sync start --server --files css/*.css *.html",
-    "start": "babel script.js --watch --out-file script-compiled.js"
+    "start": "http-server"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +29,7 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-latest": "^6.24.1",
     "browser-sync": "^2.23.6",
+    "http-server": "^0.11.1",
     "node-sass": "^4.7.2",
     "npm-run-all": "^4.1.2",
     "nu-html-checker": "^0.1.0",
