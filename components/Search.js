@@ -13,7 +13,7 @@ Search = React.createClass({
         if (searchingText.length > 2) {
             this.props.onSearch(searchingText)
         }
-      },
+    },
 
 
     handleKeyUp: function(event) {

@@ -1,5 +1,5 @@
 var GIPHY_API_URL = 'https://api.giphy.com'
-var GIPHY_PUB_KEY = '3og0IQvQkzyfxgjzLa'
+var GIPHY_PUB_KEY = 'pgWoZqhYEveeE34B9j9f8eUxf9bUdMX8'
 
 App = React.createClass({
 
@@ -41,12 +41,12 @@ App = React.createClass({
                 xhr.open('GET', url)
                 xhr.onload = function() {
                     
-                  if (xhr.status === 200){
-                    var data = JSON.parse(xhr.responseText).data 
-                    var gif = {
-                        url: data.fixed_width_downsampled_url,
-                        sourceUrl: data.url
-                    }
+                    if (xhr.status === 200){
+                        var data = JSON.parse(xhr.responseText).data 
+                        var gif = {
+                            url: data.fixed_width_downsampled_url,
+                            sourceUrl: data.url
+                        }
                     resolve(gif)
                     } else {
                     reject(new Error('Gif not found'))
